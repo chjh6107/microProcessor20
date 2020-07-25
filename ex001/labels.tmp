@@ -1,0 +1,25 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.42</VERSION>
+ <DEVICE>ATmega128</DEVICE>
+ <WORKING_DIR>C:\WKavr\ex001</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\AVR Tools\AvrAssembler2\Appnotes</DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\WKavr\ex001\ex001.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\AVR Tools\AvrAssembler2\Appnotes\M128DEF.INC</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\WKavr\ex001\ex001.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>C:\WKavr\ex001\ex001.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>C:\WKavr\ex001\ex001.map</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <L1><FILE>C:\WKavr\ex001\ex001.asm</FILE><LINE>8</LINE></L1>
+  <L2><FILE>C:\WKavr\ex001\ex001.asm</FILE><LINE>11</LINE></L2>
+ </LABELS>
+</ASSEMBLER_INFO>

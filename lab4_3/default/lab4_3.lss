@@ -1,0 +1,309 @@
+
+lab4_3.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  000001e4  00000258  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000001e4  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .stab         000006cc  00000000  00000000  00000258  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      00000085  00000000  00000000  00000924  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_aranges 00000080  00000000  00000000  000009b0  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000339  00000000  00000000  00000a30  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000099  00000000  00000000  00000d69  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000276  00000000  00000000  00000e02  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000034  00000000  00000000  00001078  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000007c  00000000  00000000  000010ac  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000048  00000000  00000000  00001128  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+   8:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+   c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  10:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  14:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  18:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  1c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  20:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  24:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  28:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  2c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  30:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  34:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  38:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  3c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  40:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  44:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  48:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  4c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  50:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  54:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  58:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  5c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  60:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  64:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  68:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  6c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  70:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  74:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  78:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  7c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  80:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  84:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  88:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	e4 ee       	ldi	r30, 0xE4	; 228
+  a0:	f1 e0       	ldi	r31, 0x01	; 1
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a0 30       	cpi	r26, 0x00	; 0
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+  b2:	1b be       	out	0x3b, r1	; 59
+
+000000b4 <__do_clear_bss>:
+  b4:	11 e0       	ldi	r17, 0x01	; 1
+  b6:	a0 e0       	ldi	r26, 0x00	; 0
+  b8:	b1 e0       	ldi	r27, 0x01	; 1
+  ba:	01 c0       	rjmp	.+2      	; 0xbe <.do_clear_bss_start>
+
+000000bc <.do_clear_bss_loop>:
+  bc:	1d 92       	st	X+, r1
+
+000000be <.do_clear_bss_start>:
+  be:	a0 30       	cpi	r26, 0x00	; 0
+  c0:	b1 07       	cpc	r27, r17
+  c2:	e1 f7       	brne	.-8      	; 0xbc <.do_clear_bss_loop>
+  c4:	0e 94 68 00 	call	0xd0	; 0xd0 <main>
+  c8:	0c 94 f0 00 	jmp	0x1e0	; 0x1e0 <_exit>
+
+000000cc <__bad_interrupt>:
+  cc:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000d0 <main>:
+#include <avr/io.h>
+#include <avr/interrupt.h>
+
+int main(void){
+  d0:	cf 93       	push	r28
+  d2:	df 93       	push	r29
+  d4:	00 d0       	rcall	.+0      	; 0xd6 <main+0x6>
+  d6:	00 d0       	rcall	.+0      	; 0xd8 <main+0x8>
+  d8:	cd b7       	in	r28, 0x3d	; 61
+  da:	de b7       	in	r29, 0x3e	; 62
+    int loop1 = 0, loop2 = 0;
+  dc:	1a 82       	std	Y+2, r1	; 0x02
+  de:	19 82       	std	Y+1, r1	; 0x01
+  e0:	1c 82       	std	Y+4, r1	; 0x04
+  e2:	1b 82       	std	Y+3, r1	; 0x03
+	DDRE = 0x04; //PE2 출력
+  e4:	82 e2       	ldi	r24, 0x22	; 34
+  e6:	90 e0       	ldi	r25, 0x00	; 0
+  e8:	24 e0       	ldi	r18, 0x04	; 4
+  ea:	fc 01       	movw	r30, r24
+  ec:	20 83       	st	Z, r18
+	DDRB = 0x01; //PB0 출력 설정
+  ee:	87 e3       	ldi	r24, 0x37	; 55
+  f0:	90 e0       	ldi	r25, 0x00	; 0
+  f2:	21 e0       	ldi	r18, 0x01	; 1
+  f4:	fc 01       	movw	r30, r24
+  f6:	20 83       	st	Z, r18
+
+	TCCR0 = 0b00000110; // normal 모드, OC0 차단(범용IO포트동작), 분주비 256
+  f8:	83 e5       	ldi	r24, 0x53	; 83
+  fa:	90 e0       	ldi	r25, 0x00	; 0
+  fc:	26 e0       	ldi	r18, 0x06	; 6
+  fe:	fc 01       	movw	r30, r24
+ 100:	20 83       	st	Z, r18
+	TCCR2 = 0b00000100; // normal 모드, OC2 차단(범용IO포트동작), 분주비 256
+ 102:	85 e4       	ldi	r24, 0x45	; 69
+ 104:	90 e0       	ldi	r25, 0x00	; 0
+ 106:	24 e0       	ldi	r18, 0x04	; 4
+ 108:	fc 01       	movw	r30, r24
+ 10a:	20 83       	st	Z, r18
+	TCNT0 = 225;
+ 10c:	82 e5       	ldi	r24, 0x52	; 82
+ 10e:	90 e0       	ldi	r25, 0x00	; 0
+ 110:	21 ee       	ldi	r18, 0xE1	; 225
+ 112:	fc 01       	movw	r30, r24
+ 114:	20 83       	st	Z, r18
+	TCNT2 = 225;
+ 116:	84 e4       	ldi	r24, 0x44	; 68
+ 118:	90 e0       	ldi	r25, 0x00	; 0
+ 11a:	21 ee       	ldi	r18, 0xE1	; 225
+ 11c:	fc 01       	movw	r30, r24
+ 11e:	20 83       	st	Z, r18
+ 120:	01 c0       	rjmp	.+2      	; 0x124 <main+0x54>
+        //     TCNT0 = 225; //256-225 = 31
+        //     if(PORTB == 0x01) PORTB = 0x00; //소리가 꺼지면 다시 켬
+        //     else //소리가 켜져있으면 다시 끔
+        //     PORTB = 0x01;
+        // }         
+	}	
+ 122:	00 00       	nop
+	TCCR2 = 0b00000100; // normal 모드, OC2 차단(범용IO포트동작), 분주비 256
+	TCNT0 = 225;
+	TCNT2 = 225;
+
+	while(1){
+        if(TIFR & 0b01000000){
+ 124:	86 e5       	ldi	r24, 0x56	; 86
+ 126:	90 e0       	ldi	r25, 0x00	; 0
+ 128:	fc 01       	movw	r30, r24
+ 12a:	80 81       	ld	r24, Z
+ 12c:	88 2f       	mov	r24, r24
+ 12e:	90 e0       	ldi	r25, 0x00	; 0
+ 130:	80 74       	andi	r24, 0x40	; 64
+ 132:	90 70       	andi	r25, 0x00	; 0
+ 134:	00 97       	sbiw	r24, 0x00	; 0
+ 136:	29 f1       	breq	.+74     	; 0x182 <main+0xb2>
+            loop1++;
+ 138:	89 81       	ldd	r24, Y+1	; 0x01
+ 13a:	9a 81       	ldd	r25, Y+2	; 0x02
+ 13c:	01 96       	adiw	r24, 0x01	; 1
+ 13e:	9a 83       	std	Y+2, r25	; 0x02
+ 140:	89 83       	std	Y+1, r24	; 0x01
+            if(loop1==200){
+ 142:	89 81       	ldd	r24, Y+1	; 0x01
+ 144:	9a 81       	ldd	r25, Y+2	; 0x02
+ 146:	88 3c       	cpi	r24, 0xC8	; 200
+ 148:	91 05       	cpc	r25, r1
+ 14a:	61 f4       	brne	.+24     	; 0x164 <main+0x94>
+                PORTE ^= 0x04;
+ 14c:	83 e2       	ldi	r24, 0x23	; 35
+ 14e:	90 e0       	ldi	r25, 0x00	; 0
+ 150:	23 e2       	ldi	r18, 0x23	; 35
+ 152:	30 e0       	ldi	r19, 0x00	; 0
+ 154:	f9 01       	movw	r30, r18
+ 156:	30 81       	ld	r19, Z
+ 158:	24 e0       	ldi	r18, 0x04	; 4
+ 15a:	23 27       	eor	r18, r19
+ 15c:	fc 01       	movw	r30, r24
+ 15e:	20 83       	st	Z, r18
+                loop1=0;
+ 160:	1a 82       	std	Y+2, r1	; 0x02
+ 162:	19 82       	std	Y+1, r1	; 0x01
+            }
+            TCNT2 = 225;
+ 164:	84 e4       	ldi	r24, 0x44	; 68
+ 166:	90 e0       	ldi	r25, 0x00	; 0
+ 168:	21 ee       	ldi	r18, 0xE1	; 225
+ 16a:	fc 01       	movw	r30, r24
+ 16c:	20 83       	st	Z, r18
+            TIFR |= 0b01000000;
+ 16e:	86 e5       	ldi	r24, 0x56	; 86
+ 170:	90 e0       	ldi	r25, 0x00	; 0
+ 172:	26 e5       	ldi	r18, 0x56	; 86
+ 174:	30 e0       	ldi	r19, 0x00	; 0
+ 176:	f9 01       	movw	r30, r18
+ 178:	20 81       	ld	r18, Z
+ 17a:	20 64       	ori	r18, 0x40	; 64
+ 17c:	fc 01       	movw	r30, r24
+ 17e:	20 83       	st	Z, r18
+        //     TCNT0 = 225; //256-225 = 31
+        //     if(PORTB == 0x01) PORTB = 0x00; //소리가 꺼지면 다시 켬
+        //     else //소리가 켜져있으면 다시 끔
+        //     PORTB = 0x01;
+        // }         
+	}	
+ 180:	d0 cf       	rjmp	.-96     	; 0x122 <main+0x52>
+                loop1=0;
+            }
+            TCNT2 = 225;
+            TIFR |= 0b01000000;
+        }
+        else if(TIFR & 0b00000001){
+ 182:	86 e5       	ldi	r24, 0x56	; 86
+ 184:	90 e0       	ldi	r25, 0x00	; 0
+ 186:	fc 01       	movw	r30, r24
+ 188:	80 81       	ld	r24, Z
+ 18a:	88 2f       	mov	r24, r24
+ 18c:	90 e0       	ldi	r25, 0x00	; 0
+ 18e:	81 70       	andi	r24, 0x01	; 1
+ 190:	90 70       	andi	r25, 0x00	; 0
+ 192:	88 23       	and	r24, r24
+ 194:	31 f2       	breq	.-116    	; 0x122 <main+0x52>
+            loop2++;
+ 196:	8b 81       	ldd	r24, Y+3	; 0x03
+ 198:	9c 81       	ldd	r25, Y+4	; 0x04
+ 19a:	01 96       	adiw	r24, 0x01	; 1
+ 19c:	9c 83       	std	Y+4, r25	; 0x04
+ 19e:	8b 83       	std	Y+3, r24	; 0x03
+            if(loop2==100){
+ 1a0:	8b 81       	ldd	r24, Y+3	; 0x03
+ 1a2:	9c 81       	ldd	r25, Y+4	; 0x04
+ 1a4:	84 36       	cpi	r24, 0x64	; 100
+ 1a6:	91 05       	cpc	r25, r1
+ 1a8:	61 f4       	brne	.+24     	; 0x1c2 <main+0xf2>
+                PORTB ^= 0x01;
+ 1aa:	88 e3       	ldi	r24, 0x38	; 56
+ 1ac:	90 e0       	ldi	r25, 0x00	; 0
+ 1ae:	28 e3       	ldi	r18, 0x38	; 56
+ 1b0:	30 e0       	ldi	r19, 0x00	; 0
+ 1b2:	f9 01       	movw	r30, r18
+ 1b4:	30 81       	ld	r19, Z
+ 1b6:	21 e0       	ldi	r18, 0x01	; 1
+ 1b8:	23 27       	eor	r18, r19
+ 1ba:	fc 01       	movw	r30, r24
+ 1bc:	20 83       	st	Z, r18
+                loop2=0;
+ 1be:	1c 82       	std	Y+4, r1	; 0x04
+ 1c0:	1b 82       	std	Y+3, r1	; 0x03
+            }
+            TCNT0 = 225;
+ 1c2:	82 e5       	ldi	r24, 0x52	; 82
+ 1c4:	90 e0       	ldi	r25, 0x00	; 0
+ 1c6:	21 ee       	ldi	r18, 0xE1	; 225
+ 1c8:	fc 01       	movw	r30, r24
+ 1ca:	20 83       	st	Z, r18
+            TIFR |= 0b00000001;
+ 1cc:	86 e5       	ldi	r24, 0x56	; 86
+ 1ce:	90 e0       	ldi	r25, 0x00	; 0
+ 1d0:	26 e5       	ldi	r18, 0x56	; 86
+ 1d2:	30 e0       	ldi	r19, 0x00	; 0
+ 1d4:	f9 01       	movw	r30, r18
+ 1d6:	20 81       	ld	r18, Z
+ 1d8:	21 60       	ori	r18, 0x01	; 1
+ 1da:	fc 01       	movw	r30, r24
+ 1dc:	20 83       	st	Z, r18
+        //     TCNT0 = 225; //256-225 = 31
+        //     if(PORTB == 0x01) PORTB = 0x00; //소리가 꺼지면 다시 켬
+        //     else //소리가 켜져있으면 다시 끔
+        //     PORTB = 0x01;
+        // }         
+	}	
+ 1de:	a1 cf       	rjmp	.-190    	; 0x122 <main+0x52>
+
+000001e0 <_exit>:
+ 1e0:	f8 94       	cli
+
+000001e2 <__stop_program>:
+ 1e2:	ff cf       	rjmp	.-2      	; 0x1e2 <__stop_program>

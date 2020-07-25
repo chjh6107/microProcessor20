@@ -1,0 +1,205 @@
+
+lab3_1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  0000011c  00000190  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         0000011c  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .stab         000006cc  00000000  00000000  00000190  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      00000085  00000000  00000000  0000085c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_aranges 00000088  00000000  00000000  000008e8  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000038a  00000000  00000000  00000970  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000000df  00000000  00000000  00000cfa  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000279  00000000  00000000  00000dd9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000074  00000000  00000000  00001054  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000008d  00000000  00000000  000010c8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000003c  00000000  00000000  00001155  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000018  00000000  00000000  00001191  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+   8:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+   c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  10:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  14:	0c 94 68 00 	jmp	0xd0	; 0xd0 <__vector_5>
+  18:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  1c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  20:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  24:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  28:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  2c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  30:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  34:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  38:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  3c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  40:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  44:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  48:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  4c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  50:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  54:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  58:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  5c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  60:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  64:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  68:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  6c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  70:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  74:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  78:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  7c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  80:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  84:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  88:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	ec e1       	ldi	r30, 0x1C	; 28
+  a0:	f1 e0       	ldi	r31, 0x01	; 1
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a0 30       	cpi	r26, 0x00	; 0
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+  b2:	1b be       	out	0x3b, r1	; 59
+
+000000b4 <__do_clear_bss>:
+  b4:	11 e0       	ldi	r17, 0x01	; 1
+  b6:	a0 e0       	ldi	r26, 0x00	; 0
+  b8:	b1 e0       	ldi	r27, 0x01	; 1
+  ba:	01 c0       	rjmp	.+2      	; 0xbe <.do_clear_bss_start>
+
+000000bc <.do_clear_bss_loop>:
+  bc:	1d 92       	st	X+, r1
+
+000000be <.do_clear_bss_start>:
+  be:	a0 30       	cpi	r26, 0x00	; 0
+  c0:	b1 07       	cpc	r27, r17
+  c2:	e1 f7       	brne	.-8      	; 0xbc <.do_clear_bss_loop>
+  c4:	0e 94 80 00 	call	0x100	; 0x100 <main>
+  c8:	0c 94 8c 00 	jmp	0x118	; 0x118 <_exit>
+
+000000cc <__bad_interrupt>:
+  cc:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000d0 <__vector_5>:
+
+void ex1_1();
+void ex1_2();
+void ex1_3();
+
+ISR(INT4_vect){
+  d0:	1f 92       	push	r1
+  d2:	0f 92       	push	r0
+  d4:	0f b6       	in	r0, 0x3f	; 63
+  d6:	0f 92       	push	r0
+  d8:	11 24       	eor	r1, r1
+  da:	8f 93       	push	r24
+PORTB += 0x1; //1을 더함
+  dc:	88 b3       	in	r24, 0x18	; 24
+  de:	8f 5f       	subi	r24, 0xFF	; 255
+  e0:	88 bb       	out	0x18, r24	; 24
+}
+  e2:	8f 91       	pop	r24
+  e4:	0f 90       	pop	r0
+  e6:	0f be       	out	0x3f, r0	; 63
+  e8:	0f 90       	pop	r0
+  ea:	1f 90       	pop	r1
+  ec:	18 95       	reti
+
+000000ee <ex1_1>:
+    while(1);
+
+}
+
+void ex1_1(){
+    EICRB = 0b00000011; //INT4 상승에지에서 비동기적으로 인터럽트 요구
+  ee:	83 e0       	ldi	r24, 0x03	; 3
+  f0:	8a bf       	out	0x3a, r24	; 58
+}
+  f2:	08 95       	ret
+
+000000f4 <ex1_2>:
+
+void ex1_2(){
+    EICRB = 0b00000010; //INT4 하강에지에서 비동기적으로 인터럽트 요구
+  f4:	82 e0       	ldi	r24, 0x02	; 2
+  f6:	8a bf       	out	0x3a, r24	; 58
+}
+  f8:	08 95       	ret
+
+000000fa <ex1_3>:
+
+void ex1_3(){
+    EICRB = 0b00000001; //INT4의 논리적 변경 시 인터럽트 요구
+  fa:	81 e0       	ldi	r24, 0x01	; 1
+  fc:	8a bf       	out	0x3a, r24	; 58
+}
+  fe:	08 95       	ret
+
+00000100 <main>:
+ISR(INT4_vect){
+PORTB += 0x1; //1을 더함
+}
+
+int main(){
+    DDRB = 0xFF;
+ 100:	8f ef       	ldi	r24, 0xFF	; 255
+ 102:	87 bb       	out	0x17, r24	; 23
+    DDRE = 0x00; //PORTE의 INT4~INT7 input
+ 104:	12 b8       	out	0x02, r1	; 2
+
+    PORTB = 0x00;
+ 106:	18 ba       	out	0x18, r1	; 24
+
+    EIFR = 0x80; //외부 Interrupt INT4 Enable
+ 108:	80 e8       	ldi	r24, 0x80	; 128
+ 10a:	88 bf       	out	0x38, r24	; 56
+    EIMSK = 0b00010000; //INT4 Interrupt Enable
+ 10c:	90 e1       	ldi	r25, 0x10	; 16
+ 10e:	99 bf       	out	0x39, r25	; 57
+    SREG = 0x80; //전역 Interrupt Enable
+ 110:	8f bf       	out	0x3f, r24	; 63
+    while(1);
+
+}
+
+void ex1_1(){
+    EICRB = 0b00000011; //INT4 상승에지에서 비동기적으로 인터럽트 요구
+ 112:	83 e0       	ldi	r24, 0x03	; 3
+ 114:	8a bf       	out	0x3a, r24	; 58
+ 116:	ff cf       	rjmp	.-2      	; 0x116 <main+0x16>
+
+00000118 <_exit>:
+ 118:	f8 94       	cli
+
+0000011a <__stop_program>:
+ 11a:	ff cf       	rjmp	.-2      	; 0x11a <__stop_program>

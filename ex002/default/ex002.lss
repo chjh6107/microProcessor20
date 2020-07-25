@@ -1,0 +1,828 @@
+
+ex002.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000020  00800100  000005c6  0000063a  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000005c6  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .stab         000006cc  00000000  00000000  0000065c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      00000085  00000000  00000000  00000d28  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_aranges 000000a0  00000000  00000000  00000db0  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000043f  00000000  00000000  00000e50  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000000ce  00000000  00000000  0000128f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000327  00000000  00000000  0000135d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000034  00000000  00000000  00001684  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000077  00000000  00000000  000016b8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000003b  00000000  00000000  0000172f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+   8:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+   c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  10:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  14:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  18:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  1c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  20:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  24:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  28:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  2c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  30:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  34:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  38:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  3c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  40:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  44:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  48:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  4c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  50:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  54:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  58:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  5c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  60:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  64:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  68:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  6c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  70:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  74:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  78:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  7c:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  80:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  84:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+  88:	0c 94 66 00 	jmp	0xcc	; 0xcc <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	e6 ec       	ldi	r30, 0xC6	; 198
+  a0:	f5 e0       	ldi	r31, 0x05	; 5
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a0 32       	cpi	r26, 0x20	; 32
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+  b2:	1b be       	out	0x3b, r1	; 59
+
+000000b4 <__do_clear_bss>:
+  b4:	11 e0       	ldi	r17, 0x01	; 1
+  b6:	a0 e2       	ldi	r26, 0x20	; 32
+  b8:	b1 e0       	ldi	r27, 0x01	; 1
+  ba:	01 c0       	rjmp	.+2      	; 0xbe <.do_clear_bss_start>
+
+000000bc <.do_clear_bss_loop>:
+  bc:	1d 92       	st	X+, r1
+
+000000be <.do_clear_bss_start>:
+  be:	a0 32       	cpi	r26, 0x20	; 32
+  c0:	b1 07       	cpc	r27, r17
+  c2:	e1 f7       	brne	.-8      	; 0xbc <.do_clear_bss_loop>
+  c4:	0e 94 68 00 	call	0xd0	; 0xd0 <main>
+  c8:	0c 94 e1 02 	jmp	0x5c2	; 0x5c2 <_exit>
+
+000000cc <__bad_interrupt>:
+  cc:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000d0 <main>:
+#include <avr/io.h>
+#include <util/delay.h>
+
+int main(void){
+  d0:	cf 93       	push	r28
+  d2:	df 93       	push	r29
+  d4:	cd b7       	in	r28, 0x3d	; 61
+  d6:	de b7       	in	r29, 0x3e	; 62
+  d8:	a3 97       	sbiw	r28, 0x23	; 35
+  da:	0f b6       	in	r0, 0x3f	; 63
+  dc:	f8 94       	cli
+  de:	de bf       	out	0x3e, r29	; 62
+  e0:	0f be       	out	0x3f, r0	; 63
+  e2:	cd bf       	out	0x3d, r28	; 61
+//	int hexToFND[16] = {0xC0, 0xF9, 0xA4, 0xB0,
+//						0x99, 0x92, 0x82, 0xF8,
+//						0x80, 0x90, 0x88, 0x83,
+//						0xC6, 0xA1, 0x86, 0x8E};//CA type 8bit, included dot 
+	int hexToFND[16] = {0x40, 0x79, 0x24, 0x30,
+  e4:	ce 01       	movw	r24, r28
+  e6:	04 96       	adiw	r24, 0x04	; 4
+  e8:	20 e0       	ldi	r18, 0x00	; 0
+  ea:	31 e0       	ldi	r19, 0x01	; 1
+  ec:	40 e2       	ldi	r20, 0x20	; 32
+  ee:	f9 01       	movw	r30, r18
+  f0:	00 80       	ld	r0, Z
+  f2:	2f 5f       	subi	r18, 0xFF	; 255
+  f4:	3f 4f       	sbci	r19, 0xFF	; 255
+  f6:	fc 01       	movw	r30, r24
+  f8:	00 82       	st	Z, r0
+  fa:	01 96       	adiw	r24, 0x01	; 1
+  fc:	41 50       	subi	r20, 0x01	; 1
+  fe:	44 23       	and	r20, r20
+ 100:	b1 f7       	brne	.-20     	; 0xee <main+0x1e>
+						0x19, 0x12, 0x02, 0x78,
+						0x00, 0x10, 0x08, 0x03,
+						0x46, 0x21, 0x06, 0x0E};//CA type 7bit, not included dot
+
+	unsigned char a, b, res;
+	DDRA = 0x00; // op. A
+ 102:	8a e3       	ldi	r24, 0x3A	; 58
+ 104:	90 e0       	ldi	r25, 0x00	; 0
+ 106:	fc 01       	movw	r30, r24
+ 108:	10 82       	st	Z, r1
+	DDRB = 0x00; // op. B
+ 10a:	87 e3       	ldi	r24, 0x37	; 55
+ 10c:	90 e0       	ldi	r25, 0x00	; 0
+ 10e:	fc 01       	movw	r30, r24
+ 110:	10 82       	st	Z, r1
+	DDRC = 0xFF; // Upper nibble seg.
+ 112:	84 e3       	ldi	r24, 0x34	; 52
+ 114:	90 e0       	ldi	r25, 0x00	; 0
+ 116:	2f ef       	ldi	r18, 0xFF	; 255
+ 118:	fc 01       	movw	r30, r24
+ 11a:	20 83       	st	Z, r18
+	DDRD = 0xFF; // Lower nibble seg.
+ 11c:	81 e3       	ldi	r24, 0x31	; 49
+ 11e:	90 e0       	ldi	r25, 0x00	; 0
+ 120:	2f ef       	ldi	r18, 0xFF	; 255
+ 122:	fc 01       	movw	r30, r24
+ 124:	20 83       	st	Z, r18
+	DDRE = 0x00; // Calc dipsw.
+ 126:	82 e2       	ldi	r24, 0x22	; 34
+ 128:	90 e0       	ldi	r25, 0x00	; 0
+ 12a:	fc 01       	movw	r30, r24
+ 12c:	10 82       	st	Z, r1
+
+	while(1){
+		a = ~PINA;
+ 12e:	89 e3       	ldi	r24, 0x39	; 57
+ 130:	90 e0       	ldi	r25, 0x00	; 0
+ 132:	fc 01       	movw	r30, r24
+ 134:	80 81       	ld	r24, Z
+ 136:	80 95       	com	r24
+ 138:	89 83       	std	Y+1, r24	; 0x01
+		b = ~PINB;
+ 13a:	86 e3       	ldi	r24, 0x36	; 54
+ 13c:	90 e0       	ldi	r25, 0x00	; 0
+ 13e:	fc 01       	movw	r30, r24
+ 140:	80 81       	ld	r24, Z
+ 142:	80 95       	com	r24
+ 144:	8a 83       	std	Y+2, r24	; 0x02
+
+		switch(~PINE & 0x0F){ // + - x % and or not xor nor nand
+ 146:	81 e2       	ldi	r24, 0x21	; 33
+ 148:	90 e0       	ldi	r25, 0x00	; 0
+ 14a:	fc 01       	movw	r30, r24
+ 14c:	80 81       	ld	r24, Z
+ 14e:	88 2f       	mov	r24, r24
+ 150:	90 e0       	ldi	r25, 0x00	; 0
+ 152:	80 95       	com	r24
+ 154:	90 95       	com	r25
+ 156:	8f 70       	andi	r24, 0x0F	; 15
+ 158:	90 70       	andi	r25, 0x00	; 0
+ 15a:	84 30       	cpi	r24, 0x04	; 4
+ 15c:	91 05       	cpc	r25, r1
+ 15e:	09 f4       	brne	.+2      	; 0x162 <main+0x92>
+ 160:	f1 c0       	rjmp	.+482    	; 0x344 <main+0x274>
+ 162:	85 30       	cpi	r24, 0x05	; 5
+ 164:	91 05       	cpc	r25, r1
+ 166:	9c f4       	brge	.+38     	; 0x18e <main+0xbe>
+ 168:	81 30       	cpi	r24, 0x01	; 1
+ 16a:	91 05       	cpc	r25, r1
+ 16c:	09 f4       	brne	.+2      	; 0x170 <main+0xa0>
+ 16e:	57 c0       	rjmp	.+174    	; 0x21e <main+0x14e>
+ 170:	82 30       	cpi	r24, 0x02	; 2
+ 172:	91 05       	cpc	r25, r1
+ 174:	1c f4       	brge	.+6      	; 0x17c <main+0xac>
+ 176:	00 97       	sbiw	r24, 0x00	; 0
+ 178:	19 f1       	breq	.+70     	; 0x1c0 <main+0xf0>
+ 17a:	16 c2       	rjmp	.+1068   	; 0x5a8 <main+0x4d8>
+ 17c:	82 30       	cpi	r24, 0x02	; 2
+ 17e:	91 05       	cpc	r25, r1
+ 180:	09 f4       	brne	.+2      	; 0x184 <main+0xb4>
+ 182:	7e c0       	rjmp	.+252    	; 0x280 <main+0x1b0>
+ 184:	83 30       	cpi	r24, 0x03	; 3
+ 186:	91 05       	cpc	r25, r1
+ 188:	09 f4       	brne	.+2      	; 0x18c <main+0xbc>
+ 18a:	ab c0       	rjmp	.+342    	; 0x2e2 <main+0x212>
+ 18c:	0d c2       	rjmp	.+1050   	; 0x5a8 <main+0x4d8>
+ 18e:	87 30       	cpi	r24, 0x07	; 7
+ 190:	91 05       	cpc	r25, r1
+ 192:	09 f4       	brne	.+2      	; 0x196 <main+0xc6>
+ 194:	64 c1       	rjmp	.+712    	; 0x45e <main+0x38e>
+ 196:	88 30       	cpi	r24, 0x08	; 8
+ 198:	91 05       	cpc	r25, r1
+ 19a:	4c f4       	brge	.+18     	; 0x1ae <main+0xde>
+ 19c:	85 30       	cpi	r24, 0x05	; 5
+ 19e:	91 05       	cpc	r25, r1
+ 1a0:	09 f4       	brne	.+2      	; 0x1a4 <main+0xd4>
+ 1a2:	ff c0       	rjmp	.+510    	; 0x3a2 <main+0x2d2>
+ 1a4:	86 30       	cpi	r24, 0x06	; 6
+ 1a6:	91 05       	cpc	r25, r1
+ 1a8:	09 f4       	brne	.+2      	; 0x1ac <main+0xdc>
+ 1aa:	2a c1       	rjmp	.+596    	; 0x400 <main+0x330>
+ 1ac:	fd c1       	rjmp	.+1018   	; 0x5a8 <main+0x4d8>
+ 1ae:	88 30       	cpi	r24, 0x08	; 8
+ 1b0:	91 05       	cpc	r25, r1
+ 1b2:	09 f4       	brne	.+2      	; 0x1b6 <main+0xe6>
+ 1b4:	83 c1       	rjmp	.+774    	; 0x4bc <main+0x3ec>
+ 1b6:	89 30       	cpi	r24, 0x09	; 9
+ 1b8:	91 05       	cpc	r25, r1
+ 1ba:	09 f4       	brne	.+2      	; 0x1be <main+0xee>
+ 1bc:	ba c1       	rjmp	.+884    	; 0x532 <main+0x462>
+ 1be:	f4 c1       	rjmp	.+1000   	; 0x5a8 <main+0x4d8>
+			case 0x0 : // +
+				res = a + b;
+ 1c0:	99 81       	ldd	r25, Y+1	; 0x01
+ 1c2:	8a 81       	ldd	r24, Y+2	; 0x02
+ 1c4:	89 0f       	add	r24, r25
+ 1c6:	8b 83       	std	Y+3, r24	; 0x03
+				PORTC = hexToFND[res >> 4];
+ 1c8:	85 e3       	ldi	r24, 0x35	; 53
+ 1ca:	90 e0       	ldi	r25, 0x00	; 0
+ 1cc:	2b 81       	ldd	r18, Y+3	; 0x03
+ 1ce:	22 95       	swap	r18
+ 1d0:	2f 70       	andi	r18, 0x0F	; 15
+ 1d2:	22 2f       	mov	r18, r18
+ 1d4:	30 e0       	ldi	r19, 0x00	; 0
+ 1d6:	22 0f       	add	r18, r18
+ 1d8:	33 1f       	adc	r19, r19
+ 1da:	ae 01       	movw	r20, r28
+ 1dc:	4f 5f       	subi	r20, 0xFF	; 255
+ 1de:	5f 4f       	sbci	r21, 0xFF	; 255
+ 1e0:	24 0f       	add	r18, r20
+ 1e2:	35 1f       	adc	r19, r21
+ 1e4:	2d 5f       	subi	r18, 0xFD	; 253
+ 1e6:	3f 4f       	sbci	r19, 0xFF	; 255
+ 1e8:	f9 01       	movw	r30, r18
+ 1ea:	20 81       	ld	r18, Z
+ 1ec:	31 81       	ldd	r19, Z+1	; 0x01
+ 1ee:	fc 01       	movw	r30, r24
+ 1f0:	20 83       	st	Z, r18
+				PORTD = hexToFND[res & 0x0F];
+ 1f2:	82 e3       	ldi	r24, 0x32	; 50
+ 1f4:	90 e0       	ldi	r25, 0x00	; 0
+ 1f6:	2b 81       	ldd	r18, Y+3	; 0x03
+ 1f8:	22 2f       	mov	r18, r18
+ 1fa:	30 e0       	ldi	r19, 0x00	; 0
+ 1fc:	2f 70       	andi	r18, 0x0F	; 15
+ 1fe:	30 70       	andi	r19, 0x00	; 0
+ 200:	22 0f       	add	r18, r18
+ 202:	33 1f       	adc	r19, r19
+ 204:	ae 01       	movw	r20, r28
+ 206:	4f 5f       	subi	r20, 0xFF	; 255
+ 208:	5f 4f       	sbci	r21, 0xFF	; 255
+ 20a:	24 0f       	add	r18, r20
+ 20c:	35 1f       	adc	r19, r21
+ 20e:	2d 5f       	subi	r18, 0xFD	; 253
+ 210:	3f 4f       	sbci	r19, 0xFF	; 255
+ 212:	f9 01       	movw	r30, r18
+ 214:	20 81       	ld	r18, Z
+ 216:	31 81       	ldd	r19, Z+1	; 0x01
+ 218:	fc 01       	movw	r30, r24
+ 21a:	20 83       	st	Z, r18
+				break;
+ 21c:	c5 c1       	rjmp	.+906    	; 0x5a8 <main+0x4d8>
+			case 0x1 : // -
+				res = a - b;
+ 21e:	99 81       	ldd	r25, Y+1	; 0x01
+ 220:	8a 81       	ldd	r24, Y+2	; 0x02
+ 222:	f9 2f       	mov	r31, r25
+ 224:	f8 1b       	sub	r31, r24
+ 226:	8f 2f       	mov	r24, r31
+ 228:	8b 83       	std	Y+3, r24	; 0x03
+				PORTC = hexToFND[res >> 4];
+ 22a:	85 e3       	ldi	r24, 0x35	; 53
+ 22c:	90 e0       	ldi	r25, 0x00	; 0
+ 22e:	2b 81       	ldd	r18, Y+3	; 0x03
+ 230:	22 95       	swap	r18
+ 232:	2f 70       	andi	r18, 0x0F	; 15
+ 234:	22 2f       	mov	r18, r18
+ 236:	30 e0       	ldi	r19, 0x00	; 0
+ 238:	22 0f       	add	r18, r18
+ 23a:	33 1f       	adc	r19, r19
+ 23c:	ae 01       	movw	r20, r28
+ 23e:	4f 5f       	subi	r20, 0xFF	; 255
+ 240:	5f 4f       	sbci	r21, 0xFF	; 255
+ 242:	24 0f       	add	r18, r20
+ 244:	35 1f       	adc	r19, r21
+ 246:	2d 5f       	subi	r18, 0xFD	; 253
+ 248:	3f 4f       	sbci	r19, 0xFF	; 255
+ 24a:	f9 01       	movw	r30, r18
+ 24c:	20 81       	ld	r18, Z
+ 24e:	31 81       	ldd	r19, Z+1	; 0x01
+ 250:	fc 01       	movw	r30, r24
+ 252:	20 83       	st	Z, r18
+				PORTD = hexToFND[res & 0x0F];
+ 254:	82 e3       	ldi	r24, 0x32	; 50
+ 256:	90 e0       	ldi	r25, 0x00	; 0
+ 258:	2b 81       	ldd	r18, Y+3	; 0x03
+ 25a:	22 2f       	mov	r18, r18
+ 25c:	30 e0       	ldi	r19, 0x00	; 0
+ 25e:	2f 70       	andi	r18, 0x0F	; 15
+ 260:	30 70       	andi	r19, 0x00	; 0
+ 262:	22 0f       	add	r18, r18
+ 264:	33 1f       	adc	r19, r19
+ 266:	ae 01       	movw	r20, r28
+ 268:	4f 5f       	subi	r20, 0xFF	; 255
+ 26a:	5f 4f       	sbci	r21, 0xFF	; 255
+ 26c:	24 0f       	add	r18, r20
+ 26e:	35 1f       	adc	r19, r21
+ 270:	2d 5f       	subi	r18, 0xFD	; 253
+ 272:	3f 4f       	sbci	r19, 0xFF	; 255
+ 274:	f9 01       	movw	r30, r18
+ 276:	20 81       	ld	r18, Z
+ 278:	31 81       	ldd	r19, Z+1	; 0x01
+ 27a:	fc 01       	movw	r30, r24
+ 27c:	20 83       	st	Z, r18
+				break;
+ 27e:	94 c1       	rjmp	.+808    	; 0x5a8 <main+0x4d8>
+			case 0x2 : // *
+				res = a * b;
+ 280:	99 81       	ldd	r25, Y+1	; 0x01
+ 282:	8a 81       	ldd	r24, Y+2	; 0x02
+ 284:	98 9f       	mul	r25, r24
+ 286:	80 2d       	mov	r24, r0
+ 288:	11 24       	eor	r1, r1
+ 28a:	8b 83       	std	Y+3, r24	; 0x03
+				PORTC = hexToFND[res >> 4];
+ 28c:	85 e3       	ldi	r24, 0x35	; 53
+ 28e:	90 e0       	ldi	r25, 0x00	; 0
+ 290:	2b 81       	ldd	r18, Y+3	; 0x03
+ 292:	22 95       	swap	r18
+ 294:	2f 70       	andi	r18, 0x0F	; 15
+ 296:	22 2f       	mov	r18, r18
+ 298:	30 e0       	ldi	r19, 0x00	; 0
+ 29a:	22 0f       	add	r18, r18
+ 29c:	33 1f       	adc	r19, r19
+ 29e:	ae 01       	movw	r20, r28
+ 2a0:	4f 5f       	subi	r20, 0xFF	; 255
+ 2a2:	5f 4f       	sbci	r21, 0xFF	; 255
+ 2a4:	24 0f       	add	r18, r20
+ 2a6:	35 1f       	adc	r19, r21
+ 2a8:	2d 5f       	subi	r18, 0xFD	; 253
+ 2aa:	3f 4f       	sbci	r19, 0xFF	; 255
+ 2ac:	f9 01       	movw	r30, r18
+ 2ae:	20 81       	ld	r18, Z
+ 2b0:	31 81       	ldd	r19, Z+1	; 0x01
+ 2b2:	fc 01       	movw	r30, r24
+ 2b4:	20 83       	st	Z, r18
+				PORTD = hexToFND[res & 0x0F];
+ 2b6:	82 e3       	ldi	r24, 0x32	; 50
+ 2b8:	90 e0       	ldi	r25, 0x00	; 0
+ 2ba:	2b 81       	ldd	r18, Y+3	; 0x03
+ 2bc:	22 2f       	mov	r18, r18
+ 2be:	30 e0       	ldi	r19, 0x00	; 0
+ 2c0:	2f 70       	andi	r18, 0x0F	; 15
+ 2c2:	30 70       	andi	r19, 0x00	; 0
+ 2c4:	22 0f       	add	r18, r18
+ 2c6:	33 1f       	adc	r19, r19
+ 2c8:	ae 01       	movw	r20, r28
+ 2ca:	4f 5f       	subi	r20, 0xFF	; 255
+ 2cc:	5f 4f       	sbci	r21, 0xFF	; 255
+ 2ce:	24 0f       	add	r18, r20
+ 2d0:	35 1f       	adc	r19, r21
+ 2d2:	2d 5f       	subi	r18, 0xFD	; 253
+ 2d4:	3f 4f       	sbci	r19, 0xFF	; 255
+ 2d6:	f9 01       	movw	r30, r18
+ 2d8:	20 81       	ld	r18, Z
+ 2da:	31 81       	ldd	r19, Z+1	; 0x01
+ 2dc:	fc 01       	movw	r30, r24
+ 2de:	20 83       	st	Z, r18
+				break;
+ 2e0:	63 c1       	rjmp	.+710    	; 0x5a8 <main+0x4d8>
+			case 0x3 : // %
+				res = a / b;
+ 2e2:	89 81       	ldd	r24, Y+1	; 0x01
+ 2e4:	9a 81       	ldd	r25, Y+2	; 0x02
+ 2e6:	69 2f       	mov	r22, r25
+ 2e8:	0e 94 d5 02 	call	0x5aa	; 0x5aa <__udivmodqi4>
+ 2ec:	8b 83       	std	Y+3, r24	; 0x03
+				PORTC = hexToFND[res >> 4];
+ 2ee:	85 e3       	ldi	r24, 0x35	; 53
+ 2f0:	90 e0       	ldi	r25, 0x00	; 0
+ 2f2:	2b 81       	ldd	r18, Y+3	; 0x03
+ 2f4:	22 95       	swap	r18
+ 2f6:	2f 70       	andi	r18, 0x0F	; 15
+ 2f8:	22 2f       	mov	r18, r18
+ 2fa:	30 e0       	ldi	r19, 0x00	; 0
+ 2fc:	22 0f       	add	r18, r18
+ 2fe:	33 1f       	adc	r19, r19
+ 300:	ae 01       	movw	r20, r28
+ 302:	4f 5f       	subi	r20, 0xFF	; 255
+ 304:	5f 4f       	sbci	r21, 0xFF	; 255
+ 306:	24 0f       	add	r18, r20
+ 308:	35 1f       	adc	r19, r21
+ 30a:	2d 5f       	subi	r18, 0xFD	; 253
+ 30c:	3f 4f       	sbci	r19, 0xFF	; 255
+ 30e:	f9 01       	movw	r30, r18
+ 310:	20 81       	ld	r18, Z
+ 312:	31 81       	ldd	r19, Z+1	; 0x01
+ 314:	fc 01       	movw	r30, r24
+ 316:	20 83       	st	Z, r18
+				PORTD = hexToFND[res & 0x0F];
+ 318:	82 e3       	ldi	r24, 0x32	; 50
+ 31a:	90 e0       	ldi	r25, 0x00	; 0
+ 31c:	2b 81       	ldd	r18, Y+3	; 0x03
+ 31e:	22 2f       	mov	r18, r18
+ 320:	30 e0       	ldi	r19, 0x00	; 0
+ 322:	2f 70       	andi	r18, 0x0F	; 15
+ 324:	30 70       	andi	r19, 0x00	; 0
+ 326:	22 0f       	add	r18, r18
+ 328:	33 1f       	adc	r19, r19
+ 32a:	ae 01       	movw	r20, r28
+ 32c:	4f 5f       	subi	r20, 0xFF	; 255
+ 32e:	5f 4f       	sbci	r21, 0xFF	; 255
+ 330:	24 0f       	add	r18, r20
+ 332:	35 1f       	adc	r19, r21
+ 334:	2d 5f       	subi	r18, 0xFD	; 253
+ 336:	3f 4f       	sbci	r19, 0xFF	; 255
+ 338:	f9 01       	movw	r30, r18
+ 33a:	20 81       	ld	r18, Z
+ 33c:	31 81       	ldd	r19, Z+1	; 0x01
+ 33e:	fc 01       	movw	r30, r24
+ 340:	20 83       	st	Z, r18
+				break;
+ 342:	32 c1       	rjmp	.+612    	; 0x5a8 <main+0x4d8>
+			case 0x4 : //and
+				PORTC = hexToFND[(a & b) >> 4];
+ 344:	85 e3       	ldi	r24, 0x35	; 53
+ 346:	90 e0       	ldi	r25, 0x00	; 0
+ 348:	39 81       	ldd	r19, Y+1	; 0x01
+ 34a:	2a 81       	ldd	r18, Y+2	; 0x02
+ 34c:	23 23       	and	r18, r19
+ 34e:	22 95       	swap	r18
+ 350:	2f 70       	andi	r18, 0x0F	; 15
+ 352:	22 2f       	mov	r18, r18
+ 354:	30 e0       	ldi	r19, 0x00	; 0
+ 356:	22 0f       	add	r18, r18
+ 358:	33 1f       	adc	r19, r19
+ 35a:	ae 01       	movw	r20, r28
+ 35c:	4f 5f       	subi	r20, 0xFF	; 255
+ 35e:	5f 4f       	sbci	r21, 0xFF	; 255
+ 360:	24 0f       	add	r18, r20
+ 362:	35 1f       	adc	r19, r21
+ 364:	2d 5f       	subi	r18, 0xFD	; 253
+ 366:	3f 4f       	sbci	r19, 0xFF	; 255
+ 368:	f9 01       	movw	r30, r18
+ 36a:	20 81       	ld	r18, Z
+ 36c:	31 81       	ldd	r19, Z+1	; 0x01
+ 36e:	fc 01       	movw	r30, r24
+ 370:	20 83       	st	Z, r18
+				PORTD = hexToFND[(a & b) & 0x0F];
+ 372:	82 e3       	ldi	r24, 0x32	; 50
+ 374:	90 e0       	ldi	r25, 0x00	; 0
+ 376:	39 81       	ldd	r19, Y+1	; 0x01
+ 378:	2a 81       	ldd	r18, Y+2	; 0x02
+ 37a:	23 23       	and	r18, r19
+ 37c:	22 2f       	mov	r18, r18
+ 37e:	30 e0       	ldi	r19, 0x00	; 0
+ 380:	2f 70       	andi	r18, 0x0F	; 15
+ 382:	30 70       	andi	r19, 0x00	; 0
+ 384:	22 0f       	add	r18, r18
+ 386:	33 1f       	adc	r19, r19
+ 388:	ae 01       	movw	r20, r28
+ 38a:	4f 5f       	subi	r20, 0xFF	; 255
+ 38c:	5f 4f       	sbci	r21, 0xFF	; 255
+ 38e:	24 0f       	add	r18, r20
+ 390:	35 1f       	adc	r19, r21
+ 392:	2d 5f       	subi	r18, 0xFD	; 253
+ 394:	3f 4f       	sbci	r19, 0xFF	; 255
+ 396:	f9 01       	movw	r30, r18
+ 398:	20 81       	ld	r18, Z
+ 39a:	31 81       	ldd	r19, Z+1	; 0x01
+ 39c:	fc 01       	movw	r30, r24
+ 39e:	20 83       	st	Z, r18
+				break;
+ 3a0:	03 c1       	rjmp	.+518    	; 0x5a8 <main+0x4d8>
+			case 0x5 : //or
+				PORTC = hexToFND[(a | b) >> 4];
+ 3a2:	85 e3       	ldi	r24, 0x35	; 53
+ 3a4:	90 e0       	ldi	r25, 0x00	; 0
+ 3a6:	39 81       	ldd	r19, Y+1	; 0x01
+ 3a8:	2a 81       	ldd	r18, Y+2	; 0x02
+ 3aa:	23 2b       	or	r18, r19
+ 3ac:	22 95       	swap	r18
+ 3ae:	2f 70       	andi	r18, 0x0F	; 15
+ 3b0:	22 2f       	mov	r18, r18
+ 3b2:	30 e0       	ldi	r19, 0x00	; 0
+ 3b4:	22 0f       	add	r18, r18
+ 3b6:	33 1f       	adc	r19, r19
+ 3b8:	ae 01       	movw	r20, r28
+ 3ba:	4f 5f       	subi	r20, 0xFF	; 255
+ 3bc:	5f 4f       	sbci	r21, 0xFF	; 255
+ 3be:	24 0f       	add	r18, r20
+ 3c0:	35 1f       	adc	r19, r21
+ 3c2:	2d 5f       	subi	r18, 0xFD	; 253
+ 3c4:	3f 4f       	sbci	r19, 0xFF	; 255
+ 3c6:	f9 01       	movw	r30, r18
+ 3c8:	20 81       	ld	r18, Z
+ 3ca:	31 81       	ldd	r19, Z+1	; 0x01
+ 3cc:	fc 01       	movw	r30, r24
+ 3ce:	20 83       	st	Z, r18
+				PORTD = hexToFND[(a | b) & 0x0F];
+ 3d0:	82 e3       	ldi	r24, 0x32	; 50
+ 3d2:	90 e0       	ldi	r25, 0x00	; 0
+ 3d4:	39 81       	ldd	r19, Y+1	; 0x01
+ 3d6:	2a 81       	ldd	r18, Y+2	; 0x02
+ 3d8:	23 2b       	or	r18, r19
+ 3da:	22 2f       	mov	r18, r18
+ 3dc:	30 e0       	ldi	r19, 0x00	; 0
+ 3de:	2f 70       	andi	r18, 0x0F	; 15
+ 3e0:	30 70       	andi	r19, 0x00	; 0
+ 3e2:	22 0f       	add	r18, r18
+ 3e4:	33 1f       	adc	r19, r19
+ 3e6:	ae 01       	movw	r20, r28
+ 3e8:	4f 5f       	subi	r20, 0xFF	; 255
+ 3ea:	5f 4f       	sbci	r21, 0xFF	; 255
+ 3ec:	24 0f       	add	r18, r20
+ 3ee:	35 1f       	adc	r19, r21
+ 3f0:	2d 5f       	subi	r18, 0xFD	; 253
+ 3f2:	3f 4f       	sbci	r19, 0xFF	; 255
+ 3f4:	f9 01       	movw	r30, r18
+ 3f6:	20 81       	ld	r18, Z
+ 3f8:	31 81       	ldd	r19, Z+1	; 0x01
+ 3fa:	fc 01       	movw	r30, r24
+ 3fc:	20 83       	st	Z, r18
+				break;
+ 3fe:	d4 c0       	rjmp	.+424    	; 0x5a8 <main+0x4d8>
+			case 0x6 : //not
+				PORTC = hexToFND[(~ a) & 0x0F]; //calc. the lower 4bit of a
+ 400:	85 e3       	ldi	r24, 0x35	; 53
+ 402:	90 e0       	ldi	r25, 0x00	; 0
+ 404:	29 81       	ldd	r18, Y+1	; 0x01
+ 406:	22 2f       	mov	r18, r18
+ 408:	30 e0       	ldi	r19, 0x00	; 0
+ 40a:	20 95       	com	r18
+ 40c:	30 95       	com	r19
+ 40e:	2f 70       	andi	r18, 0x0F	; 15
+ 410:	30 70       	andi	r19, 0x00	; 0
+ 412:	22 0f       	add	r18, r18
+ 414:	33 1f       	adc	r19, r19
+ 416:	ae 01       	movw	r20, r28
+ 418:	4f 5f       	subi	r20, 0xFF	; 255
+ 41a:	5f 4f       	sbci	r21, 0xFF	; 255
+ 41c:	24 0f       	add	r18, r20
+ 41e:	35 1f       	adc	r19, r21
+ 420:	2d 5f       	subi	r18, 0xFD	; 253
+ 422:	3f 4f       	sbci	r19, 0xFF	; 255
+ 424:	f9 01       	movw	r30, r18
+ 426:	20 81       	ld	r18, Z
+ 428:	31 81       	ldd	r19, Z+1	; 0x01
+ 42a:	fc 01       	movw	r30, r24
+ 42c:	20 83       	st	Z, r18
+				PORTD = hexToFND[(~ b) & 0x0F]; //calc. the lower 4bit of b
+ 42e:	82 e3       	ldi	r24, 0x32	; 50
+ 430:	90 e0       	ldi	r25, 0x00	; 0
+ 432:	2a 81       	ldd	r18, Y+2	; 0x02
+ 434:	22 2f       	mov	r18, r18
+ 436:	30 e0       	ldi	r19, 0x00	; 0
+ 438:	20 95       	com	r18
+ 43a:	30 95       	com	r19
+ 43c:	2f 70       	andi	r18, 0x0F	; 15
+ 43e:	30 70       	andi	r19, 0x00	; 0
+ 440:	22 0f       	add	r18, r18
+ 442:	33 1f       	adc	r19, r19
+ 444:	ae 01       	movw	r20, r28
+ 446:	4f 5f       	subi	r20, 0xFF	; 255
+ 448:	5f 4f       	sbci	r21, 0xFF	; 255
+ 44a:	24 0f       	add	r18, r20
+ 44c:	35 1f       	adc	r19, r21
+ 44e:	2d 5f       	subi	r18, 0xFD	; 253
+ 450:	3f 4f       	sbci	r19, 0xFF	; 255
+ 452:	f9 01       	movw	r30, r18
+ 454:	20 81       	ld	r18, Z
+ 456:	31 81       	ldd	r19, Z+1	; 0x01
+ 458:	fc 01       	movw	r30, r24
+ 45a:	20 83       	st	Z, r18
+				break;
+ 45c:	a5 c0       	rjmp	.+330    	; 0x5a8 <main+0x4d8>
+			case 0x7 : //xor
+				PORTC = hexToFND[(a ^ b) >> 4];
+ 45e:	85 e3       	ldi	r24, 0x35	; 53
+ 460:	90 e0       	ldi	r25, 0x00	; 0
+ 462:	39 81       	ldd	r19, Y+1	; 0x01
+ 464:	2a 81       	ldd	r18, Y+2	; 0x02
+ 466:	23 27       	eor	r18, r19
+ 468:	22 95       	swap	r18
+ 46a:	2f 70       	andi	r18, 0x0F	; 15
+ 46c:	22 2f       	mov	r18, r18
+ 46e:	30 e0       	ldi	r19, 0x00	; 0
+ 470:	22 0f       	add	r18, r18
+ 472:	33 1f       	adc	r19, r19
+ 474:	ae 01       	movw	r20, r28
+ 476:	4f 5f       	subi	r20, 0xFF	; 255
+ 478:	5f 4f       	sbci	r21, 0xFF	; 255
+ 47a:	24 0f       	add	r18, r20
+ 47c:	35 1f       	adc	r19, r21
+ 47e:	2d 5f       	subi	r18, 0xFD	; 253
+ 480:	3f 4f       	sbci	r19, 0xFF	; 255
+ 482:	f9 01       	movw	r30, r18
+ 484:	20 81       	ld	r18, Z
+ 486:	31 81       	ldd	r19, Z+1	; 0x01
+ 488:	fc 01       	movw	r30, r24
+ 48a:	20 83       	st	Z, r18
+				PORTD = hexToFND[(a ^ b) & 0x0F];
+ 48c:	82 e3       	ldi	r24, 0x32	; 50
+ 48e:	90 e0       	ldi	r25, 0x00	; 0
+ 490:	39 81       	ldd	r19, Y+1	; 0x01
+ 492:	2a 81       	ldd	r18, Y+2	; 0x02
+ 494:	23 27       	eor	r18, r19
+ 496:	22 2f       	mov	r18, r18
+ 498:	30 e0       	ldi	r19, 0x00	; 0
+ 49a:	2f 70       	andi	r18, 0x0F	; 15
+ 49c:	30 70       	andi	r19, 0x00	; 0
+ 49e:	22 0f       	add	r18, r18
+ 4a0:	33 1f       	adc	r19, r19
+ 4a2:	ae 01       	movw	r20, r28
+ 4a4:	4f 5f       	subi	r20, 0xFF	; 255
+ 4a6:	5f 4f       	sbci	r21, 0xFF	; 255
+ 4a8:	24 0f       	add	r18, r20
+ 4aa:	35 1f       	adc	r19, r21
+ 4ac:	2d 5f       	subi	r18, 0xFD	; 253
+ 4ae:	3f 4f       	sbci	r19, 0xFF	; 255
+ 4b0:	f9 01       	movw	r30, r18
+ 4b2:	20 81       	ld	r18, Z
+ 4b4:	31 81       	ldd	r19, Z+1	; 0x01
+ 4b6:	fc 01       	movw	r30, r24
+ 4b8:	20 83       	st	Z, r18
+				break;
+ 4ba:	76 c0       	rjmp	.+236    	; 0x5a8 <main+0x4d8>
+			case 0x8 : //nor
+				PORTC = hexToFND[((~(a | b)) & 0xF0) >> 4];
+ 4bc:	85 e3       	ldi	r24, 0x35	; 53
+ 4be:	90 e0       	ldi	r25, 0x00	; 0
+ 4c0:	39 81       	ldd	r19, Y+1	; 0x01
+ 4c2:	2a 81       	ldd	r18, Y+2	; 0x02
+ 4c4:	23 2b       	or	r18, r19
+ 4c6:	22 2f       	mov	r18, r18
+ 4c8:	30 e0       	ldi	r19, 0x00	; 0
+ 4ca:	20 95       	com	r18
+ 4cc:	30 95       	com	r19
+ 4ce:	20 7f       	andi	r18, 0xF0	; 240
+ 4d0:	30 70       	andi	r19, 0x00	; 0
+ 4d2:	35 95       	asr	r19
+ 4d4:	27 95       	ror	r18
+ 4d6:	35 95       	asr	r19
+ 4d8:	27 95       	ror	r18
+ 4da:	35 95       	asr	r19
+ 4dc:	27 95       	ror	r18
+ 4de:	35 95       	asr	r19
+ 4e0:	27 95       	ror	r18
+ 4e2:	22 0f       	add	r18, r18
+ 4e4:	33 1f       	adc	r19, r19
+ 4e6:	ae 01       	movw	r20, r28
+ 4e8:	4f 5f       	subi	r20, 0xFF	; 255
+ 4ea:	5f 4f       	sbci	r21, 0xFF	; 255
+ 4ec:	24 0f       	add	r18, r20
+ 4ee:	35 1f       	adc	r19, r21
+ 4f0:	2d 5f       	subi	r18, 0xFD	; 253
+ 4f2:	3f 4f       	sbci	r19, 0xFF	; 255
+ 4f4:	f9 01       	movw	r30, r18
+ 4f6:	20 81       	ld	r18, Z
+ 4f8:	31 81       	ldd	r19, Z+1	; 0x01
+ 4fa:	fc 01       	movw	r30, r24
+ 4fc:	20 83       	st	Z, r18
+				PORTD = hexToFND[(~(a | b)) & 0x0F];
+ 4fe:	82 e3       	ldi	r24, 0x32	; 50
+ 500:	90 e0       	ldi	r25, 0x00	; 0
+ 502:	39 81       	ldd	r19, Y+1	; 0x01
+ 504:	2a 81       	ldd	r18, Y+2	; 0x02
+ 506:	23 2b       	or	r18, r19
+ 508:	22 2f       	mov	r18, r18
+ 50a:	30 e0       	ldi	r19, 0x00	; 0
+ 50c:	20 95       	com	r18
+ 50e:	30 95       	com	r19
+ 510:	2f 70       	andi	r18, 0x0F	; 15
+ 512:	30 70       	andi	r19, 0x00	; 0
+ 514:	22 0f       	add	r18, r18
+ 516:	33 1f       	adc	r19, r19
+ 518:	ae 01       	movw	r20, r28
+ 51a:	4f 5f       	subi	r20, 0xFF	; 255
+ 51c:	5f 4f       	sbci	r21, 0xFF	; 255
+ 51e:	24 0f       	add	r18, r20
+ 520:	35 1f       	adc	r19, r21
+ 522:	2d 5f       	subi	r18, 0xFD	; 253
+ 524:	3f 4f       	sbci	r19, 0xFF	; 255
+ 526:	f9 01       	movw	r30, r18
+ 528:	20 81       	ld	r18, Z
+ 52a:	31 81       	ldd	r19, Z+1	; 0x01
+ 52c:	fc 01       	movw	r30, r24
+ 52e:	20 83       	st	Z, r18
+				break;
+ 530:	3b c0       	rjmp	.+118    	; 0x5a8 <main+0x4d8>
+			case 0x9 : //nand
+				PORTC = hexToFND[((~(a & b)) & 0xF0) >> 4];
+ 532:	85 e3       	ldi	r24, 0x35	; 53
+ 534:	90 e0       	ldi	r25, 0x00	; 0
+ 536:	39 81       	ldd	r19, Y+1	; 0x01
+ 538:	2a 81       	ldd	r18, Y+2	; 0x02
+ 53a:	23 23       	and	r18, r19
+ 53c:	22 2f       	mov	r18, r18
+ 53e:	30 e0       	ldi	r19, 0x00	; 0
+ 540:	20 95       	com	r18
+ 542:	30 95       	com	r19
+ 544:	20 7f       	andi	r18, 0xF0	; 240
+ 546:	30 70       	andi	r19, 0x00	; 0
+ 548:	35 95       	asr	r19
+ 54a:	27 95       	ror	r18
+ 54c:	35 95       	asr	r19
+ 54e:	27 95       	ror	r18
+ 550:	35 95       	asr	r19
+ 552:	27 95       	ror	r18
+ 554:	35 95       	asr	r19
+ 556:	27 95       	ror	r18
+ 558:	22 0f       	add	r18, r18
+ 55a:	33 1f       	adc	r19, r19
+ 55c:	ae 01       	movw	r20, r28
+ 55e:	4f 5f       	subi	r20, 0xFF	; 255
+ 560:	5f 4f       	sbci	r21, 0xFF	; 255
+ 562:	24 0f       	add	r18, r20
+ 564:	35 1f       	adc	r19, r21
+ 566:	2d 5f       	subi	r18, 0xFD	; 253
+ 568:	3f 4f       	sbci	r19, 0xFF	; 255
+ 56a:	f9 01       	movw	r30, r18
+ 56c:	20 81       	ld	r18, Z
+ 56e:	31 81       	ldd	r19, Z+1	; 0x01
+ 570:	fc 01       	movw	r30, r24
+ 572:	20 83       	st	Z, r18
+				PORTD = hexToFND[(~(a & b)) & 0x0F];
+ 574:	82 e3       	ldi	r24, 0x32	; 50
+ 576:	90 e0       	ldi	r25, 0x00	; 0
+ 578:	39 81       	ldd	r19, Y+1	; 0x01
+ 57a:	2a 81       	ldd	r18, Y+2	; 0x02
+ 57c:	23 23       	and	r18, r19
+ 57e:	22 2f       	mov	r18, r18
+ 580:	30 e0       	ldi	r19, 0x00	; 0
+ 582:	20 95       	com	r18
+ 584:	30 95       	com	r19
+ 586:	2f 70       	andi	r18, 0x0F	; 15
+ 588:	30 70       	andi	r19, 0x00	; 0
+ 58a:	22 0f       	add	r18, r18
+ 58c:	33 1f       	adc	r19, r19
+ 58e:	ae 01       	movw	r20, r28
+ 590:	4f 5f       	subi	r20, 0xFF	; 255
+ 592:	5f 4f       	sbci	r21, 0xFF	; 255
+ 594:	24 0f       	add	r18, r20
+ 596:	35 1f       	adc	r19, r21
+ 598:	2d 5f       	subi	r18, 0xFD	; 253
+ 59a:	3f 4f       	sbci	r19, 0xFF	; 255
+ 59c:	f9 01       	movw	r30, r18
+ 59e:	20 81       	ld	r18, Z
+ 5a0:	31 81       	ldd	r19, Z+1	; 0x01
+ 5a2:	fc 01       	movw	r30, r24
+ 5a4:	20 83       	st	Z, r18
+				break;
+ 5a6:	00 00       	nop
+			default:
+				;
+		}
+	}
+ 5a8:	c2 cd       	rjmp	.-1148   	; 0x12e <main+0x5e>
+
+000005aa <__udivmodqi4>:
+ 5aa:	99 1b       	sub	r25, r25
+ 5ac:	79 e0       	ldi	r23, 0x09	; 9
+ 5ae:	04 c0       	rjmp	.+8      	; 0x5b8 <__udivmodqi4_ep>
+
+000005b0 <__udivmodqi4_loop>:
+ 5b0:	99 1f       	adc	r25, r25
+ 5b2:	96 17       	cp	r25, r22
+ 5b4:	08 f0       	brcs	.+2      	; 0x5b8 <__udivmodqi4_ep>
+ 5b6:	96 1b       	sub	r25, r22
+
+000005b8 <__udivmodqi4_ep>:
+ 5b8:	88 1f       	adc	r24, r24
+ 5ba:	7a 95       	dec	r23
+ 5bc:	c9 f7       	brne	.-14     	; 0x5b0 <__udivmodqi4_loop>
+ 5be:	80 95       	com	r24
+ 5c0:	08 95       	ret
+
+000005c2 <_exit>:
+ 5c2:	f8 94       	cli
+
+000005c4 <__stop_program>:
+ 5c4:	ff cf       	rjmp	.-2      	; 0x5c4 <__stop_program>
